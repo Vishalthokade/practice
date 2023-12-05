@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdio.h>
+int main()
+{
+    FILE *fptr;
+    char towrite[200]="im in pune";
+    fptr=fopen("filename.o","wb");
+
+    if(fptr==NULL){
+        printf("can't open the file");
+        }
+    else {
+        printf("file opened successfully");
+        fwrite(towrite, 15, 1, fptr);
+        fclose(fptr);
+    }
+    char toread[200]="im in mh";
+    fptr=fopen("filename.o","rb");
+    if(fptr==NULL){
+        printf("can't open the file");
+        }
+    else {
+        printf("\n file opened successfully");
+        fread(toread, 15, 1, fptr);
+        fclose(fptr);
+    }
+return 0;
+}
